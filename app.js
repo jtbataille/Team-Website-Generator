@@ -13,74 +13,116 @@ const render = require("./lib/htmlRenderer");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
-const managerQuestions = [
-    {
-        type: "input",
-        message: "What is the manager's name?",
-        name: "name"
-    },
-    {
-        type: "input",
-        message: "What is the manager's ID?",
-        name: "id"
-    },
-    {
-        type: "input",
-        message: "What is the manager's company e-mail?",
-        name: "email"
-    },
-    {
-        type: "input",
-        message: "What is the manager's office number?",
-        name: "officeNumber"
-    }
-];
+const groupMembers = [];
 
-const engineerQuestions = [
-    {
-        type: "input",
-        message: "What is the manager's name?",
-        name: "name"
-    },
-    {
-        type: "input",
-        message: "What is the manager's ID?",
-        name: "id"
-    },
-    {
-        type: "input",
-        message: "What is the manager's company e-mail?",
-        name: "email"
-    },
-    {
-        type: "input",
-        message: "What is the engineer's GitHub?",
-        name: "github"
-    }
-];
+function employeeQuestion() {
+    inquirer.prompt([
+        {
+            type: "list",
+            message: "Which employee are you going to input?",
+            name: "name",
+            choices: ["Intern", "Manager", "Engineer"]
+        },
+    ]).then(role => {
+        if (role.name === "Intern") {
+            managerQuestions();
+        } else if (role.name === "Manager") {
+            managerQuestions();
+        } else if (role.name === "Engineer") {
+            engineerQuestions();
+        };
+    });
+};
 
-const internQuestions = [
-    {
-        type: "input",
-        message: "What is the manager's name?",
-        name: "name"
-    },
-    {
-        type: "input",
-        message: "What is the manager's ID?",
-        name: "id"
-    },
-    {
-        type: "input",
-        message: "What is the manager's company e-mail?",
-        name: "email"
-    },
-    {
-        type: "input",
-        message: "What is the intern's school?",
-        name: "school"
-    }
-];
+function internQuestions() {
+    return inquirer.prompt([
+        {
+            type: "input",
+            message: "What is the manager's name?",
+            name: "name"
+        },
+        {
+            type: "input",
+            message: "What is the manager's ID?",
+            name: "id"
+        },
+        {
+            type: "input",
+            message: "What is the manager's company e-mail?",
+            name: "email"
+        },
+        {
+            type: "input",
+            message: "What is the intern's school?",
+            name: "school"
+        }
+    ]).then(answers => {
+        let intern = new Intern(answers.name, answer,id, answer.email, answer.school);
+        groupMembers.push(intern);
+
+        employeeQuestion();
+    });
+};
+
+function managerQuestions() {
+    return inquirer.prompt([
+        {
+            type: "input",
+            message: "What is the manager's name?",
+            name: "name"
+        },
+        {
+            type: "input",
+            message: "What is the manager's ID?",
+            name: "id"
+        },
+        {
+            type: "input",
+            message: "What is the manager's company e-mail?",
+            name: "email"
+        },
+        {
+            type: "input",
+            message: "What is the manager's office number?",
+            name: "officeNumber"
+        }
+    ]).then(answers => {
+        let manager = new Manager(answers.name, answer,id, answer.email, answer.officeNumber);
+        groupMembers.push(manager);
+
+        employeeQuestion();
+    });
+};
+
+function engineerQuestions() {
+    return inquirer.prompt([
+        {
+            type: "input",
+            message: "What is the manager's name?",
+            name: "name"
+        },
+        {
+            type: "input",
+            message: "What is the manager's ID?",
+            name: "id"
+        },
+        {
+            type: "input",
+            message: "What is the manager's company e-mail?",
+            name: "email"
+        },
+        {
+            type: "input",
+            message: "What is the engineer's GitHub?",
+            name: "github"
+        }
+    ]).then(answers => {
+        let engineer = new Engineer(answers.name, answer,id, answer.email, answer.github);
+        groupMembers.push(engineer);
+
+        employeeQuestion();
+    });
+};
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
