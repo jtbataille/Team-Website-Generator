@@ -24,7 +24,7 @@ function employeeQuestion() {
         },
     ]).then(role => {
         if (role.name === "Intern") {
-            managerQuestions();
+            internQuestions();
         } else if (role.name === "Manager") {
             managerQuestions();
         } else if (role.name === "Engineer") {
