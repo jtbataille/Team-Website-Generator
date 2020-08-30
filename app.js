@@ -40,17 +40,17 @@ function internQuestions() {
     return inquirer.prompt([
         {
             type: "input",
-            message: "What is the manager's name?",
+            message: "What is the intern's name?",
             name: "name"
         },
         {
             type: "input",
-            message: "What is the manager's ID?",
+            message: "What is the intern's ID?",
             name: "id"
         },
         {
             type: "input",
-            message: "What is the manager's company e-mail?",
+            message: "What is the intern's company e-mail?",
             name: "email"
         },
         {
@@ -59,7 +59,7 @@ function internQuestions() {
             name: "school"
         }
     ]).then(answers => {
-        let intern = new Intern(answers.name, answer,id, answer.email, answer.school);
+        let intern = new Intern(answers.name, answers.id, answers.email, answers.school);
         groupMembers.push(intern);
 
         employeeQuestion();
@@ -90,7 +90,7 @@ function managerQuestions() {
             name: "officeNumber"
         }
     ]).then(answers => {
-        let manager = new Manager(answers.name, answer,id, answer.email, answer.officeNumber);
+        let manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
         groupMembers.push(manager);
 
         employeeQuestion();
@@ -102,17 +102,17 @@ function engineerQuestions() {
     return inquirer.prompt([
         {
             type: "input",
-            message: "What is the manager's name?",
+            message: "What is the engineer's name?",
             name: "name"
         },
         {
             type: "input",
-            message: "What is the manager's ID?",
+            message: "What is the engineer's ID?",
             name: "id"
         },
         {
             type: "input",
-            message: "What is the manager's company e-mail?",
+            message: "What is the engineer's company e-mail?",
             name: "email"
         },
         {
@@ -121,7 +121,7 @@ function engineerQuestions() {
             name: "github"
         }
     ]).then(answers => {
-        let engineer = new Engineer(answers.name, answer,id, answer.email, answer.github);
+        let engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
         groupMembers.push(engineer);
 
         employeeQuestion();
