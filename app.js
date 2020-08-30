@@ -30,7 +30,7 @@ function employeeQuestion() {
         } else if (role.name === "Engineer") {
             engineerQuestions();
         } else if (role.name === "Create Webpage") {
-            createWebpage();
+            createWebpage(outputPath, render(groupMembrs));
         };
     });
 };
@@ -127,3 +127,15 @@ function engineerQuestions() {
         employeeQuestion();
     });
 };
+
+// Function used to create the team.html
+function createWebpage(fileName, data) {
+    fs.writeFile(fileName, data, "utf8", err => {
+        if (err) throw err;
+
+        console.log("Your file has been created.");
+    });
+};
+
+// Call function to itialize CLI program
+employeeQuestion();
