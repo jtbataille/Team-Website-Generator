@@ -28,6 +28,7 @@ Node JS, JavaScript
 In order to text this program, use the following commands:
 
 <code>npm install jest</code>
+
 <code>npm run test<code>
 
 These commands will run the test.js files within the test directory.
