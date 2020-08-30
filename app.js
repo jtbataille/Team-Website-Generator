@@ -21,7 +21,7 @@ function employeeQuestion() {
             type: "list",
             message: "Which employee are you going to input?",
             name: "name",
-            choices: ["Intern", "Manager", "Engineer"]
+            choices: ["Intern", "Manager", "Engineer", "Create Webpage"]
         },
     ]).then(role => {
         if (role.name === "Intern") {
@@ -30,6 +30,8 @@ function employeeQuestion() {
             managerQuestions();
         } else if (role.name === "Engineer") {
             engineerQuestions();
+        } else if (role.name === "Create Webpage") {
+            createWebpage();
         };
     });
 };
