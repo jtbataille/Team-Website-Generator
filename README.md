@@ -25,7 +25,7 @@ This will install the package "inquirer," which is used to run the Node CLI.
 Node JS, JavaScript
 
 ## Tests
-In order to text this program, use the following commands:
+In order to test this program, use the following commands:
 
 <code>npm install jest</code>
 
@@ -38,6 +38,7 @@ These commands will run the test.js files within the test directory.
 
 ## Contact Information
 * Jarrod Bataille
+  * Portfolio Webpage: https://jtbataille.github.io/
   * GitHub Profile: https://github.com/jtbataille
   * E-mail Address: jtbataille@gmail.com
 
