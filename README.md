@@ -39,7 +39,7 @@ These commands will run the test.js files within the test directory.
 ## Contact Information
 * Jarrod Bataille
   * GitHub Profile: https://github.com/jtbataille
-  * Please email me with any questions here: jtbataille@gmail.com
+  * E-mail Address: jtbataille@gmail.com
 
 - - -
 Copyright © 2007 Free Software Foundation, Inc. <https://fsf.org/>
