@@ -13,6 +13,15 @@ const render = require("./lib/htmlRenderer");
 // Create empty array for new members created by the CLI
 const groupMembers = [];
 
+// Function to validate name, id, email, & member-specific field to prevent empty strings
+const responseValidation = function (input) {
+    if (input === "") {
+        console.log("This parameter cannot be empty!");
+        return false;
+    }
+
+    return true;
+};
 
 // Function to validate e-mail address (for empty string and faulty address)
 const emailValidation = function (email) {
@@ -57,12 +66,14 @@ function internQuestions() {
         {
             type: "input",
             message: "What is the intern's name?",
-            name: "name"
+            name: "name",
+            validate: responseValidation
         },
         {
             type: "input",
             message: "What is the intern's ID?",
-            name: "id"
+            name: "id",
+            validate: responseValidation
         },
         {
             type: "input",
@@ -73,7 +84,8 @@ function internQuestions() {
         {
             type: "input",
             message: "What is the intern's school?",
-            name: "school"
+            name: "school",
+            validate: responseValidation
         }
     ]).then(answers => {
         let intern = new Intern(answers.name, answers.id, answers.email, answers.school);
@@ -89,12 +101,14 @@ function managerQuestions() {
         {
             type: "input",
             message: "What is the manager's name?",
-            name: "name"
+            name: "name",
+            validate: responseValidation
         },
         {
             type: "input",
             message: "What is the manager's ID?",
-            name: "id"
+            name: "id",
+            validate: responseValidation
         },
         {
             type: "input",
@@ -105,7 +119,8 @@ function managerQuestions() {
         {
             type: "input",
             message: "What is the manager's office number?",
-            name: "officeNumber"
+            name: "officeNumber",
+            validate: responseValidation
         }
     ]).then(answers => {
         let manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
@@ -121,12 +136,14 @@ function engineerQuestions() {
         {
             type: "input",
             message: "What is the engineer's name?",
-            name: "name"
+            name: "name",
+            validate: responseValidation
         },
         {
             type: "input",
             message: "What is the engineer's ID?",
-            name: "id"
+            name: "id",
+            validate: responseValidation
         },
         {
             type: "input",
@@ -137,7 +154,8 @@ function engineerQuestions() {
         {
             type: "input",
             message: "What is the engineer's GitHub?",
-            name: "github"
+            name: "github",
+            validate: responseValidation
         }
     ]).then(answers => {
         let engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
