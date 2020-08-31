@@ -30,7 +30,7 @@ function employeeQuestion() {
         } else if (role.name === "Engineer") {
             engineerQuestions();
         } else if (role.name === "Create Webpage") {
-            createWebpage(outputPath, render(groupMembrs));
+            createWebpage(outputPath, render(groupMembers));
         };
     });
 };

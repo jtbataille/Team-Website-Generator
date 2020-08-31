@@ -12,19 +12,17 @@
     <script src="https://kit.fontawesome.com/c502137733.js"></script>
 </head>
 
-<body>
+<body style="background-image: url(../assets/background-image.jpg);">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 jumbotron mb-3 team-heading">
-                <h1 class="text-center">My Team</h1>
+            <div class="col-12 jumbotron mb-3 team-heading" style="background-color: #262526;">
+                <h1 class="text-center text-white">My Team</h1>
             </div>
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="team-area col-12 d-flex justify-content-center">
-                {{ team }}
-            </div>
+        <div class="row row-cols-3">
+            {{ team }}
         </div>
     </div>
 </body>
