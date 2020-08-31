@@ -38,7 +38,7 @@ These commands will run the test.js files within the test directory:
   4. Manager.test.js
 
 ## Application Demo
-With inquirer installed as instructed above in [Installation](#installation), the user will open an integrated terminal and use the command <code>node app.js</code> This will queue a series of questions from inquirer to garner information about the team, as seen here:
+With inquirer installed as laid out above in [Installation](#installation), the user will open an integrated terminal and use the command <code>node app.js</code> This will queue a series of questions from inquirer to garner information about the team, as seen here:
 
 ![CLI Input](assets/CLI.png)
 
