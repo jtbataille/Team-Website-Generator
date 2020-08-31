@@ -13,6 +13,22 @@ const render = require("./lib/htmlRenderer");
 // Create empty array for new members created by the CLI
 const groupMembers = [];
 
+
+// Function to validate e-mail address (for empty string and faulty address)
+const emailValidation = function (email) {
+    valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+  
+    if (valid) {
+        return true;
+    } else if (email === "") {
+        console.log("E-mail address cannot be blank. Please fix it!");
+        return false;
+    } else {
+        console.log(": Invalid e-mail address. Please fix it!");
+        return false;
+    }
+};
+
 // Initial function from which the user will choose which employee type to create
 function employeeQuestion() {
     inquirer.prompt([
@@ -51,7 +67,8 @@ function internQuestions() {
         {
             type: "input",
             message: "What is the intern's company e-mail?",
-            name: "email"
+            name: "email",
+            validate: emailValidation
         },
         {
             type: "input",
@@ -82,7 +99,8 @@ function managerQuestions() {
         {
             type: "input",
             message: "What is the manager's company e-mail?",
-            name: "email"
+            name: "email",
+            validate: emailValidation
         },
         {
             type: "input",
@@ -113,7 +131,8 @@ function engineerQuestions() {
         {
             type: "input",
             message: "What is the engineer's company e-mail?",
-            name: "email"
+            name: "email",
+            validate: emailValidation
         },
         {
             type: "input",
