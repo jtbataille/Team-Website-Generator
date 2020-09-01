@@ -46,6 +46,8 @@ From this input, an HTML page is saved into the output directory, and a file ent
 
 ![Team Website](assets/teamSite.png)
 
+[Click here to see a full video using the CLI](https://drive.google.com/file/d/1xcLXPE6eBcWV9yzThmnh3Kd1d_ZXav15/view?usp=sharing)
+
 
 ## Contact Information
 * Jarrod Bataille
